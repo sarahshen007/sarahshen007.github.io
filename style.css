@@ -3,11 +3,13 @@
   --dark-salmon: #F15A5A;
   --main-yellow: #fce38a;
   --main-lime: #eaffd0;
-  --main-green: #95e1d3;
+  --main-green: #7cd1c2;
   --dark-green: #65C5B3;
-  --bold-green: #ABE374;
+  --bold-green: #034440;
   --bright-blue: #3ED1D1;
   --bright-purple: #B07BF1;
+  --main-dark: #1b1b1b;
+  --main-white: #e8e8e8;
 }
 
 * {
@@ -36,6 +38,23 @@ body {
 
 #logo:hover {
   filter: drop-shadow(4px 4px 0px var(--main-green));
+}
+
+nav {
+  padding-left: 10px;
+  padding-top: 10px;
+  position: fixed;
+  color: var(--main-white);
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  color: var(--main-white);
+}
+
+.nav-link:hover {
+  color: var(--dark-salmon);
 }
 
 #nav-bar {
@@ -172,7 +191,8 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: var(--dark-salmon);
+  background-color: var(--main-dark);
+  color: var(--main-white)
   /*
   background-image: url('https://i.postimg.cc/SRLWBMQw/s-icon.png');
   background-size: 400px;
@@ -190,7 +210,7 @@ body {
   font-size: 30px;
   border-radius: 10px;
   text-align: center;
-  color: black;
+  color: var(--main-white);
 }
 
 
@@ -233,15 +253,17 @@ body {
 }
 
 .hover-bold {
-  text-decoration: underline wavy;
-  color: black;
+  text-decoration: none;
+  border-bottom: 2px dashed;
+  font-size: 1.3em;
+  color: white;
   transition-property: font-size, color;
   transition-duration: 0.35s;
   transition-timing-function: ease-in-out;
 }
 .hover-bold:hover {
-  color: var(--main-lime);
-  font-size: 1.3em;
+  color: var(--dark-salmon);
+  font-size: 1.5em;
 }
 
 /* ABOUT SECTION */
@@ -291,6 +313,23 @@ body {
   font-size: 1.1em;
   color: var(--bright-purple);
   text-decoration: underline wavy;
+}
+
+.bounce {
+  animation: bouncing 2s infinite;
+  text-align: center;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(30%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }
 
 @keyframes background {
@@ -475,7 +514,7 @@ body {
 #projects {
   height: 100vh;
   width: 100%;
-  background-color: var(--bright-purple);
+  background-color: var(--main-dark);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -595,7 +634,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 100%;
-  background-color: var(--dark-salmon);
+  background-color: var(--main-dark);
 }
 
 #contact > .phone-wrapper {
@@ -613,7 +652,7 @@ body {
   height: 420px;
   width: 240px;
   position: relative;
-  background-color: #1A191D;
+  background-color: var(--main-dark);
   border-radius: 3px;
   display: flex;
   flex-direction: column;
@@ -624,7 +663,7 @@ body {
 .phone-home {
   height: 30px;
   width: 30px;
-  background-color: #452020; /*#1F0404*/
+  background-color: var(--main-dark); /*#1F0404*/
   border-radius: 100px;
   transition: ease-in-out, background-color 0.25s ease-in-out;
 }
@@ -690,13 +729,14 @@ body {
 }
 
 footer {
-  background-color: var(--main-lime);
+  background-color: var(--main-dark);
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
+  color: var(--main-white);
 }
 
 footer > p > a {
   text-decoration: none;
-  color: var(--main-salmon);
+  color: var(--main-green);
 }
